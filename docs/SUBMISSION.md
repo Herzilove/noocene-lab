@@ -15,7 +15,7 @@ GitHub handles not supplied.
 Other — metacognition and human-computer interaction
 
 ## Repository
-Pending public GitHub URL.
+https://github.com/Herzilove/noocene-lab
 
 ## License
 Apache 2.0 for original code, CC BY 4.0 for original documentation and synthetic fixture. Full license texts are included.
@@ -51,6 +51,6 @@ Node.js 24+. No credentials for synthetic reproduction. Consult final README for
 Pending final application link. Show the question, complete Mind Quest, reproducible synthetic analysis and limitations.
 
 ## Confirmations
-- [ ] Repository is public and has complete license files.
-- [ ] Final publication scan found no secrets or private personal data.
+- [x] Repository is public and has complete license files.
+- [x] Publication scan found no credentials, source PDFs or participant narratives in tracked content.
 - [ ] Team agrees to publication of submission text under CC BY 4.0.

@@ -3,7 +3,7 @@
 | Service | Intended name | Current state |
 | --- | --- | --- |
 | Local project | metapleasure-reflection-agent | Existing dedicated workspace; application name Noocene Lab |
-| GitHub | Herzilove/noocene-lab | Publication pending |
+| GitHub | Herzilove/noocene-lab | Public; https://github.com/Herzilove/noocene-lab |
 | Vercel | noocene-lab | Not provisioned |
 | Supabase | noocene-lab-mvp | Not provisioned |
 

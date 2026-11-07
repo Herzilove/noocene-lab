@@ -7,6 +7,7 @@
 - [ ] Verify live Claude with configured credentials and agreed budget.
 - [ ] Durable Supabase study storage, RLS and importer.
 - [ ] Reviewed task bank, participant-level allocation and volunteer pilot.
-- [ ] Publish dedicated public repository and deploy dedicated Vercel project.
+- [x] Publish dedicated public repository: https://github.com/Herzilove/noocene-lab.
+- [ ] Deploy dedicated Vercel project.
 
 See docs/ACCEPTANCE.md for detailed gaps and JOURNAL.md for verified checks.

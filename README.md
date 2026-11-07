@@ -1,5 +1,7 @@
 # Noocene Lab
 
+Public source: https://github.com/Herzilove/noocene-lab
+
 Mind Quest is a short, objectively scored reasoning experience. INNERSPACE is a guided reflection on personal situations. A reproducible research runner tests the analysis pipeline separately from the web experience.
 
 ## Run
@@ -57,6 +59,6 @@ Supabase persistence, policies and migrations remain open. Dedicated intended cl
 
 ## License and source material
 
-Original code: Apache-2.0 (`LICENSE`). Original documentation and synthetic fixture: CC BY 4.0 (`LICENSE-CC-BY-4.0`). Third-party components retain their licenses. Source PDFs, private chats, credentials and participant narratives are excluded from this repository. Bibliographic authors identify research sources, not application contributors.
+Original code: Apache-2.0 (`LICENSE`). Original documentation and synthetic fixture: CC BY 4.0 (`LICENSE-CC-BY-4.0`). Third-party components retain their licenses. Source PDFs, private chats, credentials and participant narratives are excluded from this repository.
 
 See `docs/DEMO.md` for the demonstration and `docs/SUBMISSION.md` for the event submission draft.

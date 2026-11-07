@@ -11,7 +11,7 @@ This is a first working local prototype, not a claim of complete compliance with
 - INNERSPACE replay, hypothetical perspective and future response with local-memory narrative handling.
 - Origin checks, input validation, expiring random sessions, protected JSON export and withdrawal.
 - Reproducible synthetic pipeline, claim provenance, immutable run directories, tests, hashes, metrics, SVG and report.
-- Open-source license files, setup instructions, event submission draft (Osk: Engineer; Maik: Scientist).
+- Public GitHub repository, open-source license files, setup instructions, event submission draft (Osk: Engineer; Maik: Scientist).
 
 ## Verification scope
 
@@ -31,6 +31,6 @@ Unit/route tests cover state, grading, confidence analysis, consent, export auth
 - Autonomous, verified literature acquisition and broader knowledge retrieval. Current sources are curated.
 - Live model interpretation for INNERSPACE; current guided experience is scripted.
 - Genuine human-study findings. Synthetic pipeline checks establish no intervention efficacy.
-- Public GitHub publication and Vercel deployment; resources are named but not provisioned.
+- Vercel deployment; the public repository is https://github.com/Herzilove/noocene-lab.
 
 No psychological, therapeutic or consciousness measurement claim follows from passing software tests.
