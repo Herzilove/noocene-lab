@@ -37,6 +37,8 @@ test('API enforces phase, consent, inputs, origin and idempotency', async () => 
   store.sessions.get(data.id)!.consent=true;
   const exported=await (await GET(exportReq())).json();
   assert.equal(exported.trials.length,1);
+  assert.equal(exported.trials[0].questionId,'tiles-v1-en');
+  assert.equal(exported.trials[0].studyVersion,'pilot-v1-en');
   assert.equal(JSON.stringify(exported).includes(data.id),false);
   await DELETE(new NextRequest(base+'/api/research',{method:'DELETE',headers:{origin:base,cookie,host:'localhost:3000'}}));
   assert.equal((await (await GET(exportReq())).json()).trials.length,0);

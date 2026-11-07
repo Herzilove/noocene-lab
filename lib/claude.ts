@@ -5,9 +5,9 @@ import { questionPublic, type Answer } from './quest-core';
 // The model selects one reviewed question. It never authors unrestricted content.
 // This sacrifices free-form adaptation to enforce one question and prevent answer leakage.
 const prompts = [
-  'Welche Annahme steckt hinter deiner ersten Antwort?',
-  'Wie könntest du deine erste Schlussfolgerung an einem selbst gewählten Beispiel prüfen?',
-  'Welchen Unterschied macht für deine Begründung das Wort „sicher“?'
+  'What assumption is behind your first answer?',
+  'How could you test your first conclusion with an example of your own?',
+  'What difference does “with certainty” make to your reasoning?'
 ] as const;
 const selection = z.object({ questionId: z.number().int().min(0).max(2) }).strict();
 export function parseReflectionSelection(text: string) {

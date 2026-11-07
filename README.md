@@ -24,6 +24,8 @@ Open http://127.0.0.1:3000 during development or http://127.0.0.1:3100 for the p
 
 ## Working prototype
 
+All website routes, accessibility labels, server-returned prompts and errors use English. User-authored saved cards keep their original language. The English objective task and study have distinct version IDs to avoid silently pooling translated and earlier German trials.
+
 - Responsive landing, Mind Quest, discovery, INNERSPACE, research, privacy and protected research export interface.
 - One original, logically checked multiple-choice problem; initial/revised answers, confidence, randomized independent/guided conditions and deterministic grading.
 - Separate optional consent for research storage and sending reasoning-task data to Claude.

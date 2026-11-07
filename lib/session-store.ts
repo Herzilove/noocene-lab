@@ -1,5 +1,5 @@
 import { randomBytes, randomInt } from 'node:crypto';
-import type { Answer } from './quest-core';
+import { QUESTION_VERSION, type Answer } from './quest-core';
 
 export type Session = {
   id: string; condition: 'independent' | 'socratic'; mode: 'demo' | 'live';
@@ -33,7 +33,7 @@ export function permittedTrials() {
   prune();
   return [...store.sessions.values()].filter(s => s.consent && s.result).map(s => ({
     // No cookie credential, session ID, IP address, or narrative is exported.
-    condition: s.condition, mode: s.mode, questionId: 'tiles-v1', studyVersion: 'pilot-v1',
+    condition: s.condition, mode: s.mode, questionId: QUESTION_VERSION, studyVersion: 'pilot-v1-en',
     initialAnswer: s.result!.initial.answer, finalAnswer: s.result!.final.answer,
     initialConfidence: s.result!.initial.confidence, finalConfidence: s.result!.final.confidence,
     initialCorrect: s.result!.initial.correct, finalCorrect: s.result!.final.correct,

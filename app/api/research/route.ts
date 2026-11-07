@@ -7,7 +7,7 @@ export const runtime = 'nodejs';
 export async function GET(req: NextRequest) {
   const expected = process.env.ADMIN_TOKEN;
   if (!expected || expected.length < 32 || !safeEqual(req.headers.get('authorization') ?? '',`Bearer ${expected}`)) {
-    return NextResponse.json({error:'Zugriff nicht erlaubt.'},{status:401,headers:{'Cache-Control':'no-store'}});
+    return NextResponse.json({error:'Access denied.'},{status:401,headers:{'Cache-Control':'no-store'}});
   }
   const trials = permittedTrials();
   return NextResponse.json({
@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
   },{headers:{'Cache-Control':'no-store','Content-Disposition':'attachment; filename="noocene-research.json"'}});
 }
 export async function DELETE(req: NextRequest) {
-  if (!validRequestOrigin(req)) return NextResponse.json({error:'Ungültiger Ursprung.'},{status:403});
+  if (!validRequestOrigin(req)) return NextResponse.json({error:'Invalid request origin.'},{status:403});
   const session = getSession(req.cookies.get(COOKIE)?.value);
   if (session) session.consent = false;
   return NextResponse.json({ok:true},{headers:{'Cache-Control':'no-store'}});

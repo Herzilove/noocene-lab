@@ -17,12 +17,12 @@ function json(data: unknown, status = 200) {
   return NextResponse.json(data, { status, headers: { 'Cache-Control': 'no-store' } });
 }
 export async function POST(req: NextRequest) {
-  if (!validRequestOrigin(req)) return json({error:'Ungültiger Ursprung.'},403);
-  if (!req.headers.get('content-type')?.includes('application/json')) return json({error:'JSON erforderlich.'},415);
+  if (!validRequestOrigin(req)) return json({error:'Invalid request origin.'},403);
+  if (!req.headers.get('content-type')?.includes('application/json')) return json({error:'JSON is required.'},415);
   const raw = await req.text();
-  if (raw.length > 2048) return json({error:'Eingabe zu groß.'},413);
+  if (raw.length > 2048) return json({error:'Input is too large.'},413);
   let payload;
-  try { payload = input.parse(JSON.parse(raw)); } catch { return json({error:'Bitte prüfe deine Eingabe.'},400); }
+  try { payload = input.parse(JSON.parse(raw)); } catch { return json({error:'Please check your input.'},400); }
   const id = req.cookies.get(COOKIE)?.value;
   if (payload.action === 'exit') {
     if (id) store.sessions.delete(id);
@@ -33,31 +33,31 @@ export async function POST(req: NextRequest) {
     let session = getSession(id);
     if (session && (session.consent !== payload.consent || session.allowAI !== payload.allowAI)) { store.sessions.delete(session.id); session = undefined; }
     if (session?.result) { store.sessions.delete(session.id); session = undefined; }
-    try { session ??= startSession(payload.consent,payload.allowAI); } catch { return json({error:'Gerade sind zu viele Sitzungen aktiv. Bitte versuche es später erneut.'},429); }
+    try { session ??= startSession(payload.consent,payload.allowAI); } catch { return json({error:'Too many sessions are active. Please try again later.'},429); }
     const response = json({id:session.id,condition:session.condition,mode:session.mode,question:questionPublic()});
     response.cookies.set(COOKIE,session.id,{httpOnly:true,sameSite:'strict',secure:req.nextUrl.protocol==='https:',maxAge:1800,path:'/'});
     return response;
   }
   const session = getSession(id);
-  if (!session) return json({error:'Die Sitzung ist abgelaufen. Bitte starte neu.'},401);
+  if (!session) return json({error:'Your session has expired. Please start again.'},401);
   if (payload.action === 'initial') {
-    if (session.result) return json({error:'Die Sitzung ist abgeschlossen.'},409);
-    if (session.pending) return json({error:'Die Reflexionsfrage wird noch vorbereitet.'},409);
-    if (session.failed) return json({error:'Der Modellaufruf ist fehlgeschlagen. Bitte beende die Sitzung und starte neu. Dieser Durchlauf wird nicht ausgewertet.'},503);
-    if (session.initial && (session.initial.answer !== payload.answer || session.initial.confidence !== payload.confidence)) return json({error:'Die erste Antwort wurde bereits abgegeben.'},409);
+    if (session.result) return json({error:'This session is complete.'},409);
+    if (session.pending) return json({error:'The reflection question is still being prepared.'},409);
+    if (session.failed) return json({error:'The model request failed. Please end the session and start again. This trial will not be analyzed.'},503);
+    if (session.initial && (session.initial.answer !== payload.answer || session.initial.confidence !== payload.confidence)) return json({error:'Your initial answer has already been submitted.'},409);
     if (session.reflection) return json({question:session.reflection,mode:session.mode});
     session.initial = {answer:payload.answer,confidence:payload.confidence}; session.pending = true;
     try {
       session.reflection = session.condition === 'independent'
-        ? 'Nimm dir kurz Zeit, deine erste Antwort selbstständig zu überprüfen. Möchtest du bei deiner Einschätzung bleiben?'
+        ? 'Take a moment to review your first answer independently. Would you keep your answer?'
         : await reflectionQuestion(session.initial, session.mode);
       return json({question:session.reflection,mode:session.mode});
     } catch {
       session.failed = true;
-      return json({error:'Die Reflexionsfrage konnte nicht geladen werden. Es wurde keine Demoantwort eingesetzt. Bitte beende diese Sitzung.'},503);
+      return json({error:'The reflection question could not be loaded. No demo response was substituted. Please end this session.'},503);
     } finally { session.pending = false; }
   }
-  if (!session.initial || !session.reflection || session.pending || session.failed) return json({error:'Bitte schließe zuerst den Reflexionsschritt ab.'},409);
+  if (!session.initial || !session.reflection || session.pending || session.failed) return json({error:'Please complete the reflection step first.'},409);
   if (!session.result) {
     session.result = finishTrial(session.initial,{answer:payload.answer,confidence:payload.confidence});
     session.finishedAt = Date.now();

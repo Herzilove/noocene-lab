@@ -9,3 +9,5 @@ Finish meaningful checks, then prioritize live-provider verification, isolated d
 Current personal experience: one shared entry point, visual three-step journey (reported moment, thought, alternative view) and explicit opt-in localStorage garden with review/delete. Unsaved personal entries stay in memory. No model calls in this experience. Keep observed learning distinct from self-reported discoveries.
 
 See docs/CLAUDE-INTEGRATION.md for verified event requirements, actual SDK limits and planned personal/reflection/research integration.
+
+The full website and server-returned questions/errors now use English. Preserve saved user-authored entries as entered. The translated objective question is versioned tiles-v1-en and exported study version pilot-v1-en. Do not pool these with the earlier German study silently.
