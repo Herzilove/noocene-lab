@@ -6,7 +6,8 @@ export const personalInput=z.object({consent:z.literal(true),phase:z.enum(['expl
 const plain=z.string().min(1).max(500).refine(v=>!/(https?:|www\.)/i.test(v),'No generated links');
 const output=z.object({question:plain.refine(v=>(v.match(/\?/g)||[]).length===1,'Exactly one question'),perspectives:z.array(plain).length(2),insight:plain,practice:plain,sourceId:z.enum(['fleming-lau-2014','schooler-2011','ayduk-kross-2010'])}).strict();
 export type PersonalOutput=z.infer<typeof output>;
-export function parsePersonalReflection(text:string){return output.parse(JSON.parse(text));}
+function compact(value:PersonalOutput){return value.question.trim().split(/\s+/).length>12?{...value,question:'What do you know — and what are you guessing?'}:value;}
+export function parsePersonalReflection(text:string){return compact(output.parse(JSON.parse(text)));}
 export async function personalReflection(input:z.infer<typeof personalInput>){
  const client=new Anthropic({apiKey:process.env.ANTHROPIC_API_KEY,timeout:20000,maxRetries:0});
  const started=Date.now();
@@ -18,5 +19,5 @@ export async function personalReflection(input:z.infer<typeof personalInput>){
  let parsed;try{parsed=JSON.parse(raw);}catch{throw Error('INVALID_TOOL_'+result.stop_reason);}
  const checked=output.safeParse(parsed);
  if(!checked.success){const fields=[...new Set(checked.error.issues.map(i=>i.path.join('.')))];console.warn('personal-output-rejected',{fields,model:result.model,stopReason:result.stop_reason});throw Error('INVALID_FIELDS_'+fields.join('_'));}
- return {reflection:checked.data,provenance:{model:result.model,promptVersion:PERSONAL_PROMPT_VERSION,inputTokens:result.usage.input_tokens,outputTokens:result.usage.output_tokens,latencyMs:Date.now()-started}};
+ return {reflection:compact(checked.data),provenance:{model:result.model,promptVersion:PERSONAL_PROMPT_VERSION,inputTokens:result.usage.input_tokens,outputTokens:result.usage.output_tokens,latencyMs:Date.now()-started}};
 }
