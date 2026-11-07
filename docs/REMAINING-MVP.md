@@ -29,3 +29,5 @@ Finalize the submission with Osk (Engineer), Maik (Scientist), real evidence lin
 ## Optional later
 
 Cross-device garden sync, broader semantic retrieval/embeddings, more data sources and longer-term personal reflection studies. None is needed merely to render the current three-step experience.
+
+Personal live integration verified with Claude Sonnet 5.5 using two synthetic calls. Public evidence: research/examples/personal-connection-check.json. Prompt personal-v2 and actual input/output token counts are recorded. This is not human effectiveness evidence. The quest now uses signed state cookies to survive serverless instance changes; research exports, revocation tracking and rate limits remain non-durable.

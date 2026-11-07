@@ -1,0 +1,31 @@
+{
+  "kind": "synthetic-integration-check",
+  "humanEvidence": false,
+  "date": "2026-11-07",
+  "softwareCommit": "a3befcb",
+  "promptVersion": "personal-v2",
+  "model": "claude-sonnet-5-5",
+  "input": {
+    "moment": "Fictional example: I shared a draft in a team chat and nobody replied for two hours.",
+    "thought": "My idea must be bad.",
+    "alternative": "They may be busy; I can ask for specific feedback."
+  },
+  "explore": {
+    "status": 200,
+    "question": "When you noticed no one had replied, what did you actually see in the chat, and what did your mind add to it?",
+    "inputTokens": 866,
+    "outputTokens": 237,
+    "latencyMs": 2767
+  },
+  "closing": {
+    "status": 200,
+    "insight": "You chose a possibility, not a certainty: they may be busy. Silence leaves the meaning open, and asking directly lets you gather information instead of relying on the first interpretation.",
+    "practice": "Send one message: 'Could you look at section two and tell me if the main point is clear?' Then note what replies you actually get.",
+    "sourceId": "schooler-2011",
+    "inputTokens": 884,
+    "outputTokens": 241,
+    "latencyMs": 2715
+  },
+  "checks": ["explicit-consent browser path", "structured response validation", "one question", "allowlisted source ID", "actual model/token metadata", "closing reflection rendered"],
+  "limitations": ["one fictional example only", "not a human efficacy finding", "not a scientific source-verification loop", "generated practice mentions a hypothetical draft section not supplied by the input; this is a suggestion, not an observed fact", "provider responses may vary", "exact monetary billing not retrieved"]
+}

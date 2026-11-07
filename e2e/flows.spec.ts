@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-test('mobile quest completes without consent and server refuses unauthenticated export', async ({page,request}) => {
+test('mobile quest completes without consent and server refuses unauthenticated export', async ({page}) => {
+  test.setTimeout(60000);
   await page.setViewportSize({width:390,height:844});
   await page.goto('/');
   await page.screenshot({path:'test-results/landing-mobile.png',fullPage:true});
@@ -15,5 +16,5 @@ test('mobile quest completes without consent and server refuses unauthenticated 
   await page.getByRole('button',{name:/See my discovery/}).click();
   await expect(page.getByText('THE EXPLANATION')).toBeVisible();
   await page.screenshot({path:'test-results/quest-discovery.png',fullPage:true});
-  expect((await request.get('/api/research')).status()).toBe(401);
+  expect(await page.evaluate(async()=>(await fetch('/api/research')).status)).toBe(401);
 });

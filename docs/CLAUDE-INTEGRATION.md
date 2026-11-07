@@ -6,7 +6,7 @@ Verified against the event README, RESEARCH-LOOPS.md and .github/ISSUE_TEMPLATE/
 
 - Public repository, open-source licenses, deployed app, synthetic reproducible analysis and known-answer tests exist.
 - lib/claude.ts implements an optional official-SDK call selecting one of three reviewed prompts for the separate objective Mind Quest. Live production integration was exercised successfully on 2026-11-07 with synthetic answers and no research storage; two model calls succeeded. Exact configured model ID and token usage were not exposed to the test.
-- INNERSPACE now has an explicit opt-in personal endpoint for two calls (targeted question, closing reflection). Solo mode remains local. Outputs use a validated tool schema and allowlisted source IDs; actual model/token/latency metadata is returned to session memory. No narratives or garden history are stored on the server. Per-instance throttling is not a durable global spend limit.
+- INNERSPACE now has an explicit opt-in personal endpoint for two calls (targeted question, closing reflection). Solo mode remains local. Outputs use a validated JSON schema and allowlisted source IDs; actual model/token/latency metadata is returned to session memory. No narratives or garden history are stored on the server. Per-instance throttling is not a durable global spend limit.
 - The current offline runner loads curated literature and executes fixed tested code. It does not autonomously write analysis code or verify fresh literature. Synthetic artifacts demonstrate software execution, not a human effect.
 
 ## Concrete Claude work after access is configured
@@ -37,3 +37,5 @@ The official submission asks what worked, where the loop got stuck, how to repro
 - Embeddings/pgvector: later retrieve a few relevant verified concepts from a larger collection; unnecessary for three curated sources.
 
 Recommended order: credentialed Claude verification with budget, safe personal endpoint and research-loop trace, reviewed evaluation design and durable research collection. Add automated source ingestion only when needed. Never put secrets in repository or submission text.
+
+Personal live integration verified with Claude Sonnet 5.5 using two synthetic calls. Public evidence: research/examples/personal-connection-check.json. Prompt personal-v2 and actual input/output token counts are recorded. This is not human effectiveness evidence. The quest now uses signed state cookies to survive serverless instance changes; research exports, revocation tracking and rate limits remain non-durable.

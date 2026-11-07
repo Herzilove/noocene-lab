@@ -37,7 +37,7 @@ The single question is not a psychometrically validated task bank. Repeated atte
 
 ## Model configuration
 
-Copy `.env.example` to `.env.local`. Default mode makes no paid requests and labels guided prompts as a demo. A configured live integration uses the official Anthropic SDK to select one of three reviewed Socratic prompts in the separate reasoning quest. INNERSPACE also offers an explicit opt-in personal reflection endpoint: one tailored question and a short closing reflection, using validated tool output and source IDs. Arbitrary model text never becomes an answer hint. This is constrained adaptive selection, not unrestricted question generation.
+Copy `.env.example` to `.env.local`. Default mode makes no paid requests and labels guided prompts as a demo. A configured live integration uses the official Anthropic SDK to select one of three reviewed Socratic prompts in the separate reasoning quest. INNERSPACE also offers an explicit opt-in personal reflection endpoint: one tailored question and a short closing reflection, using validated JSON output and source IDs. Arbitrary model text never becomes an answer hint. This is constrained adaptive selection, not unrestricted question generation.
 
 Set `ENABLE_LIVE_AI=true`, an API key, and an available `ANTHROPIC_MODEL` only after choosing a usage budget. Configure `APP_ORIGIN` to the exact public origin behind a reverse proxy. Set a random `ADMIN_TOKEN` of at least 32 characters for the research export. Never commit actual values. The deployed objective quest was verified with actual provider calls on 2026-11-07, including a full mobile browser flow. The exact configured model ID and token usage were not captured; Personal calls return actual model, prompt version, token counts and latency in session memory. They do not send garden history or save narratives on the server. Per-instance rate limits are present; durable global cost/rate controls remain open.
 
@@ -64,3 +64,5 @@ Supabase persistence, policies and migrations remain open. Dedicated intended cl
 Original code: Apache-2.0 (`LICENSE`). Original documentation and synthetic fixture: CC BY 4.0 (`LICENSE-CC-BY-4.0`). Third-party components retain their licenses. Source PDFs, private chats, credentials and participant narratives are excluded from this repository.
 
 See `docs/DEMO.md` for the demonstration and `docs/SUBMISSION.md` for the event submission draft.
+
+Personal live integration verified with Claude Sonnet 5.5 using two synthetic calls. Public evidence: research/examples/personal-connection-check.json. Prompt personal-v2 and actual input/output token counts are recorded. This is not human effectiveness evidence. The quest now uses signed state cookies to survive serverless instance changes; research exports, revocation tracking and rate limits remain non-durable.

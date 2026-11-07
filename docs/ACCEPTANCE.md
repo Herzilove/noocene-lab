@@ -29,7 +29,7 @@ Unit/route tests cover state, grading, confidence analysis, consent, export auth
 - Protected aggregate metric charts and completion-rate accounting; current admin provides JSON export only.
 - Cross-device personal discovery storage and provider deletion. Local-device opt-in saving, revisiting and deletion are implemented.
 - Autonomous, verified literature acquisition and broader knowledge retrieval. Current sources are curated.
-- Live model interpretation for INNERSPACE; current guided experience is scripted.
+- Broader evaluation of personal model responses; opt-in INNERSPACE calls are implemented and verified with a fictional case.
 - Genuine human-study findings. Synthetic pipeline checks establish no intervention efficacy.
 - Broader production observability and durable research collection; Vercel is live at https://noocene-lab.vercel.app.
 
