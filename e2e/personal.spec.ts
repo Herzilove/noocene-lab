@@ -25,6 +25,7 @@ test('personal world preserves own words, stores only by choice and supports rev
  await expect(page).toHaveURL(/\/garden$/);
  await page.reload();
  await page.getByRole('button',{name:/FUNDSTÜCK 01/}).click();
+ await expect(page.getByText('Die Nachricht blieb zwei Stunden unbeantwortet',{exact:true})).toBeVisible();
  await page.getByRole('textbox').fill('Fiktiv: die Person war unterwegs.');
  await page.getByRole('button',{name:'Rückblick auf diesem Gerät speichern',exact:true}).click();
  await page.reload();

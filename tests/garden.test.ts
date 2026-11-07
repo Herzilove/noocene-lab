@@ -6,6 +6,9 @@ test('garden discards malformed, oversized and unexpected stored content',()=>{
  assert.deepEqual(parseGarden(JSON.stringify([{id:'x',story:'private data'}])),[]);
  const entry=makeDiscovery('social','My thought','Another view','Ask directly',75,50);
  assert.equal(parseGarden(JSON.stringify([entry]))[0].thought,'My thought');
+ const observed=makeDiscovery('social','Thought','Alternative','Action',50,50,'Observed event');
+ assert.equal(parseGarden(JSON.stringify([observed]))[0].observation,'Observed event');
+ assert.equal(parseGarden(JSON.stringify([{...observed,observation:'x'.repeat(1001)}])).length,0);
  assert.equal(parseGarden(JSON.stringify([{...entry,before:101}])).length,0);
  assert.equal(parseGarden(JSON.stringify([{...entry,thought:'x'.repeat(1001)}])).length,0);
  assert.equal(parseGarden(JSON.stringify(Array.from({length:30},()=>entry))).length,20);
