@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 test('all public and admin surfaces use English, including server errors',async({page})=>{
  test.setTimeout(60000);
  await page.setViewportSize({width:390,height:844});
- const routes=[['/','Step out of'],['/innerspace','What happened?'],['/garden','A place to grow'],['/research','A fresh perspective.'],['/privacy','You choose'],['/quest','Surprise'],['/quest/discovery','Start with'],['/admin/research','Trials.']];
+ const routes=[['/','A little less'],['/innerspace','What happened?'],['/garden','Small moments.'],['/research','A fresh perspective.'],['/privacy','You choose'],['/quest','Surprise'],['/quest/discovery','Start with'],['/admin/research','Trials.']];
  for(const[path,heading]of routes){
   await page.goto(path);
   await expect(page.locator('html')).toHaveAttribute('lang','en');

@@ -5,7 +5,8 @@
 - [x] Reproducible synthetic research loop with fixed hypothesis, tests and auditable artifacts.
 - [x] Original-source registry, event draft, full license texts and isolated resource plan.
 - [x] Verify live Claude quest selection with configured credentials and agreed budget (API and mobile browser).
-- [ ] Capture exact provider model/usage provenance and implement adaptive personal Claude endpoint.
+- [x] Implement opt-in personal Claude endpoint with structured responses and returned model/token provenance.
+- [ ] Verify the deployed personal endpoint with synthetic cases; implement durable research provenance and storage.
 - [ ] Durable Supabase study storage, RLS and importer.
 - [ ] Reviewed task bank, participant-level allocation and volunteer pilot.
 - [x] Publish dedicated public repository: https://github.com/Herzilove/noocene-lab.

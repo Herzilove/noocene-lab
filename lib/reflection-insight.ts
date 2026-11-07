@@ -8,9 +8,9 @@ export function reflectionInsight(thought:string,before:number,after:number){
  const absolute=thought.match(/\b(always|never|everyone|everybody|nobody|all|immer|nie|alle|niemand)\b/i)?.[0];
  return {
   title:absolute?'Check a generalization':'See your thought as a thought',
-  reason:!thought.trim()?'You did not enter a first thought, so no personal text interpretation is offered.':absolute?`Your sentence includes “${absolute}”. A question to try: is that true in every case?`:'You have captured your first thought. You can check what supports it without immediately rejecting it.',
+  reason:!thought.trim()?'You did not enter a first thought, so no personal text interpretation is offered.':absolute?`Your sentence includes “${absolute}”. A question to try: is that true in every case?`:'You caught a thought in the act. Now you can check what supports it, without having to push it away.',
   certainty:before===after?`Your confidence stays at ${before}%. Staying the same is neither success nor failure.`:`Your confidence changes from ${before}% to ${after}%. This describes your perspective, not whether your thought is correct.`,
-  practice:'Friend perspective: what would you say to a good friend in this exact situation?',
+  practice:'Try a friend’s perspective: what would you say if this happened to someone you care about?',
   sourceId:'fleming-lau-2014',
  };
 }

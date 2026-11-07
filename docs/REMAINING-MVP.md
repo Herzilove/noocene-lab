@@ -2,9 +2,9 @@
 
 Current baseline: English deployed prototype, three-step personal journey, rule-based insights, explicit local garden storage, source links, an objective reasoning quest with a verified constrained Claude prompt-selection call, and deterministic synthetic analysis.
 
-## P0 — personal Claude experience
+## Implemented — personal Claude experience
 
-Implement a protected server endpoint for explicitly consented current-session text; one tailored Socratic prompt and a source-linked final response. Validate structured outputs, prohibit invented motives/diagnoses and fabricated citations, retain local mode on errors, and test injection/timeout/invalid-output cases. An API key currently activates only the separate constrained reasoning quest.
+Implemented a server endpoint for explicitly consented current-session text; one tailored Socratic prompt and a source-linked final response. Validate structured outputs, prohibit invented motives/diagnoses and fabricated citations, retain local mode on errors, and test injection/timeout/invalid-output cases. Personal opt-in calls return structured reflections and actual provider metadata. Live verification and durable abuse/cost protection remain important.
 
 ## P0 — genuine model-driven research loop
 

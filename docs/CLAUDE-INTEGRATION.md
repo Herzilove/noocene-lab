@@ -6,7 +6,7 @@ Verified against the event README, RESEARCH-LOOPS.md and .github/ISSUE_TEMPLATE/
 
 - Public repository, open-source licenses, deployed app, synthetic reproducible analysis and known-answer tests exist.
 - lib/claude.ts implements an optional official-SDK call selecting one of three reviewed prompts for the separate objective Mind Quest. Live production integration was exercised successfully on 2026-11-07 with synthetic answers and no research storage; two model calls succeeded. Exact configured model ID and token usage were not exposed to the test.
-- INNERSPACE is entirely local and rule-based. Merely setting an API key will not enable adaptive personal reflection. Its three-step flow now provides explicit heuristic insights and source-linked exercises.
+- INNERSPACE now has an explicit opt-in personal endpoint for two calls (targeted question, closing reflection). Solo mode remains local. Outputs use a validated tool schema and allowlisted source IDs; actual model/token/latency metadata is returned to session memory. No narratives or garden history are stored on the server. Per-instance throttling is not a durable global spend limit.
 - The current offline runner loads curated literature and executes fixed tested code. It does not autonomously write analysis code or verify fresh literature. Synthetic artifacts demonstrate software execution, not a human effect.
 
 ## Concrete Claude work after access is configured
