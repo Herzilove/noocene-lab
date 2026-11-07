@@ -11,7 +11,6 @@ test('three steps produce grounded insights, cited help and a voluntary revisit'
  await page.getByRole('button',{name:'Try solo',exact:true}).click();
  const answers=['The message went unanswered for two hours','Everyone ignores me','Maybe the person is busy'];
  for(let i=0;i<3;i++){
-  await page.getByRole('button',{name:'✎ Make it yours',exact:true}).click();
   await page.getByRole('textbox').fill(answers[i]);
   await page.getByRole('button',{name:i===2?/Show my discovery/:/^Next/}).click();
  }
