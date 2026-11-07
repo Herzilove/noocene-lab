@@ -36,7 +36,7 @@ No approved human study or real study dataset exists. Live-model behavior and le
 
 ## How Claude was used
 
-The optional SDK integration is implemented for prompt selection in the objective quest. No credentialed provider call has yet been verified. The personal three-step experience and current synthetic runner do not call Claude. See docs/CLAUDE-INTEGRATION.md for the remaining model-driven loop work.
+The optional SDK integration is implemented for prompt selection in the objective quest. The deployed quest prompt-selection call and a mobile browser walkthrough succeeded on 2026-11-07 with synthetic inputs. Exact provider model and usage provenance remain to be recorded. The personal three-step experience and current synthetic runner do not call Claude. See docs/CLAUDE-INTEGRATION.md for the remaining model-driven loop work.
 
 ## What it would need next
 Freeze and approve the pilot; review task keys and data collection; verify live intervention; recruit 5–10 consenting volunteers; preserve negative and inconclusive findings.

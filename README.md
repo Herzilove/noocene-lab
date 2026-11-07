@@ -37,7 +37,7 @@ The single question is not a psychometrically validated task bank. Repeated atte
 
 Copy `.env.example` to `.env.local`. Default mode makes no paid requests and labels guided prompts as a demo. A configured live integration uses the official Anthropic SDK to select one of three reviewed Socratic prompts. Arbitrary model text never becomes an answer hint. This is constrained adaptive selection, not unrestricted question generation.
 
-Set `ENABLE_LIVE_AI=true`, an API key, and an available `ANTHROPIC_MODEL` only after choosing a usage budget. Configure `APP_ORIGIN` to the exact public origin behind a reverse proxy. Set a random `ADMIN_TOKEN` of at least 32 characters for the research export. Never commit actual values. Real provider calls have not been verified in this prototype.
+Set `ENABLE_LIVE_AI=true`, an API key, and an available `ANTHROPIC_MODEL` only after choosing a usage budget. Configure `APP_ORIGIN` to the exact public origin behind a reverse proxy. Set a random `ADMIN_TOKEN` of at least 32 characters for the research export. Never commit actual values. The deployed objective quest was verified with actual provider calls on 2026-11-07, including a full mobile browser flow. The exact configured model ID and token usage were not captured; adaptive personal INNERSPACE calls remain unimplemented.
 
 ## Research loop
 

@@ -5,7 +5,7 @@ Verified against the event README, RESEARCH-LOOPS.md and .github/ISSUE_TEMPLATE/
 ## Actual status
 
 - Public repository, open-source licenses, deployed app, synthetic reproducible analysis and known-answer tests exist.
-- lib/claude.ts implements an optional official-SDK call selecting one of three reviewed prompts for the separate objective Mind Quest. Live credentials have not been exercised.
+- lib/claude.ts implements an optional official-SDK call selecting one of three reviewed prompts for the separate objective Mind Quest. Live production integration was exercised successfully on 2026-11-07 with synthetic answers and no research storage; two model calls succeeded. Exact configured model ID and token usage were not exposed to the test.
 - INNERSPACE is entirely local and rule-based. Merely setting an API key will not enable adaptive personal reflection. Its three-step flow now provides explicit heuristic insights and source-linked exercises.
 - The current offline runner loads curated literature and executes fixed tested code. It does not autonomously write analysis code or verify fresh literature. Synthetic artifacts demonstrate software execution, not a human effect.
 
@@ -22,7 +22,7 @@ Verified against the event README, RESEARCH-LOOPS.md and .github/ISSUE_TEMPLATE/
 | Scientific open problem | docs/EXPERIMENT.md | Refine reviewed task bank and protocol |
 | Literature, code execution, validation | research/literature.json, reproduce.mjs, tests | Model-driven source verification and reviewed code iteration |
 | Concrete findings with evidence | synthetic runs, metrics and plots | Public sanitized example outputs linked from submission; real findings if collected |
-| Actual Claude contribution | SDK integration code | Credentialed call, model/prompt record and loop trace |
+| Actual Claude contribution | SDK integration code | Model/prompt provenance and actual model-driven research-loop trace |
 | Reproducibility | pnpm research:reproduce | Reproduce actual approved live run with model variability documented |
 | Public project and licenses | GitHub and license files | Submission issue; GitHub handles for Osk/Maik; team confirmation for submission text |
 
