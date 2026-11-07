@@ -1,0 +1,17 @@
+node_modules/
+.eve/
+.env
+.env.*
+!.env.example
+private/
+sessions/
+data/raw/
+*.pdf
+*.log
+.next/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.vercel/
+research/runs/
+.pnpm-store/

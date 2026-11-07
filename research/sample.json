@@ -1,0 +1,6 @@
+[
+ {"participantId":"synthetic-a","trialId":"t1","questionId":"q1","condition":"independent","consent":true,"synthetic":true,"completed":true,"initialCorrect":0,"finalCorrect":1,"initialConfidence":80,"finalConfidence":90,"durationSeconds":70},
+ {"participantId":"synthetic-b","trialId":"t2","questionId":"q1","condition":"independent","consent":true,"synthetic":true,"completed":true,"initialCorrect":1,"finalCorrect":0,"initialConfidence":60,"finalConfidence":20,"durationSeconds":65},
+ {"participantId":"synthetic-c","trialId":"t3","questionId":"q1","condition":"socratic","consent":true,"synthetic":true,"completed":true,"initialCorrect":0,"finalCorrect":1,"initialConfidence":80,"finalConfidence":90,"durationSeconds":72},
+ {"participantId":"synthetic-d","trialId":"t4","questionId":"q1","condition":"socratic","consent":true,"synthetic":true,"completed":true,"initialCorrect":0,"finalCorrect":0,"initialConfidence":60,"finalConfidence":20,"durationSeconds":68}
+]

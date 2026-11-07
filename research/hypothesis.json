@@ -1,0 +1,12 @@
+{
+ "version":"pilot-v1-draft",
+ "question":"Does guided Socratic reflection improve reasoning relative to independent reflection?",
+ "hypothesis":"Participant-mean post-minus-pre accuracy is greater in the Socratic condition.",
+ "primaryOutcome":"Difference between conditions in participant-mean accuracy change",
+ "secondaryOutcomes":["incorrect-to-correct count","correct-to-incorrect count","Brier score before and after","completion rate","duration"],
+ "design":"Between-participant randomized pilot, 5–10 consenting volunteers; fixed task bank and matched review time. Human launch approval and final question review required.",
+ "exclusions":"Technical failures and answer leakage marked separately; never silently switch conditions. Report all starts and completion reasons.",
+ "analysis":"Descriptive participant-level comparison; no confirmatory p-value or causal efficacy claim from a small pilot.",
+ "humanExperimentApproved":false,
+ "syntheticAnalysisApproved":true
+}

@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Discovery(){return <section className="document"><span className="eyebrow">DEINE ENTDECKUNG</span><h1>Beginne mit<br/><em>einer Frage.</em></h1><p>Dein Ergebnis erscheint am Ende deines Mind-Quest-Durchlaufs. Persönliche Ergebnisse werden hier nicht öffentlich verlinkt.</p><Link href="/quest" className="button primary">Mind Quest starten →</Link></section>}
