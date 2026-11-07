@@ -8,14 +8,14 @@ test('three steps produce grounded insights, cited help and a voluntary revisit'
  await page.getByRole('link',{name:/Let’s take a look/}).click();
  await expect(page).toHaveURL(/\/innerspace$/);
  expect(await page.locator('.journey-route>div').count()).toBe(3);
+ await page.getByRole('button',{name:'Try solo',exact:true}).click();
  const answers=['The message went unanswered for two hours','Everyone ignores me','Maybe the person is busy'];
  for(let i=0;i<3;i++){
   await page.getByRole('button',{name:'✎ Make it yours',exact:true}).click();
   await page.getByRole('textbox').fill(answers[i]);
-  if(i===1){await page.getByText('◉ Quick reality check',{exact:true}).click();await page.getByRole('button',{name:'Interpreted',exact:true}).click();await expect(page.getByRole('status').filter({hasText:'interpretation'})).toBeVisible();}
-  await page.getByRole('button',{name:i===2?/See what I noticed/:/^Next/}).click();
+  await page.getByRole('button',{name:i===2?/Show my discovery/:/^Next/}).click();
  }
- await expect(page.getByRole('heading',{name:'Check a generalization'})).toBeVisible();
+ await page.getByText('A closer look at your thinking',{exact:true}).click();
  await expect(page.getByText(/Your sentence includes “Everyone”/)).toBeVisible();
  await page.getByRole('button',{name:/Ask an open question/}).click();
  await page.getByText('⌁ Sources & further support',{exact:true}).click();
@@ -24,10 +24,10 @@ test('three steps produce grounded insights, cited help and a voluntary revisit'
  await expect(page.getByRole('link',{name:/Ayduk & Kross/})).toBeVisible();
  expect(await page.evaluate(()=>localStorage.getItem('noocene:garden:v1'))).toBeNull();
  await page.screenshot({path:'test-results/discovery-world.png',fullPage:true});
- await page.getByRole('button',{name:/Save to my garden/}).click();
+ await page.getByRole('button',{name:/Keep this discovery/}).click();
  expect(await page.evaluate(()=>localStorage.getItem('noocene:garden:v1'))).toBeNull();
  await page.getByRole('button',{name:'Yes, save on this device',exact:true}).click();
- await page.getByRole('link',{name:/Take me to my garden/}).click();
+ await page.getByRole('link',{name:/Open my garden/}).click();
  await expect(page).toHaveURL(/\/garden$/);
  await page.reload();
  await page.getByRole('button',{name:/DISCOVERY 01/}).click();

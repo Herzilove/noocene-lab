@@ -11,3 +11,5 @@ Current personal experience: one shared entry point, visual three-step journey (
 See docs/CLAUDE-INTEGRATION.md for verified event requirements, actual SDK limits and planned personal/reflection/research integration.
 
 The full website and server-returned questions/errors now use English. Preserve saved user-authored entries as entered. The translated objective question is versioned tiles-v1-en and exported study version pilot-v1-en. Do not pool these with the earlier German study silently.
+
+Current demo assumes participants consented before entering, per the user. Personal Claude mode starts automatically; there is no in-flow AI consent checkbox. Solo is available from the first-step toolbar. Keep research participation and local persistent-save consent separate. Questions/choices should be short everyday English; technical confidence/source details are collapsed.

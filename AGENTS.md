@@ -24,3 +24,5 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+- Demo-specific instruction: the user confirms AI-processing consent was obtained before entry. Default personal Claude mode on; no repeated AI-consent checkbox in the experience. Keep accurate privacy information and voluntary research/storage controls.
