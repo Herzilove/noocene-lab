@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {sealSession,openSession} from '../lib/quest-cookie';import {startSession} from '../lib/session-store';
+test('signed quest session survives instance loss and rejects tampering/expiry',()=>{const s=startSession(false);const cookie=sealSession(s);assert.equal(openSession(cookie)?.id,s.id);assert.equal(openSession(cookie+'x'),undefined);assert.equal(openSession(sealSession({...s,expiresAt:Date.now()-1})),undefined);});

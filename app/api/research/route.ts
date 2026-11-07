@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { openSession,sealSession } from '../../../lib/quest-cookie';
 import { safeEqual } from '../../../lib/quest-core';
 import { validRequestOrigin } from '../_origin';
-import { COOKIE, getSession, permittedTrials } from '../../../lib/session-store';
+import { COOKIE, getSession, permittedTrials, store } from '../../../lib/session-store';
 
 export const runtime = 'nodejs';
 export async function GET(req: NextRequest) {
@@ -17,7 +18,8 @@ export async function GET(req: NextRequest) {
 }
 export async function DELETE(req: NextRequest) {
   if (!validRequestOrigin(req)) return NextResponse.json({error:'Invalid request origin.'},{status:403});
-  const session = getSession(req.cookies.get(COOKIE)?.value);
-  if (session) session.consent = false;
-  return NextResponse.json({ok:true},{headers:{'Cache-Control':'no-store'}});
+  const raw=req.cookies.get(COOKIE)?.value;const restored=openSession(raw);const session=getSession(restored?.id||raw)||restored;
+  const response=NextResponse.json({ok:true},{headers:{'Cache-Control':'no-store'}});
+  if(session){session.consent=false;store.sessions.set(session.id,session);response.cookies.set(COOKIE,sealSession(session),{httpOnly:true,sameSite:'strict',secure:req.nextUrl.protocol==='https:',maxAge:1800,path:'/'});}
+  return response;
 }
