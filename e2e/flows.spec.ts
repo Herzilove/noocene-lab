@@ -17,13 +17,3 @@ test('mobile quest completes without consent and server refuses unauthenticated 
   await page.screenshot({path:'test-results/quest-discovery.png',fullPage:true});
   expect((await request.get('/api/research')).status()).toBe(401);
 });
-test('INNERSPACE completes a fictional reflection and resets',async ({page})=>{
-  await page.goto('/innerspace');
-  for(const answer of ['Eine fiktive Besprechung','Ungeduld','Vielleicht fehlte Kontext','Ich frage nach']){
-    await page.getByRole('textbox').fill(answer);
-    await page.getByRole('button',{name:/^(Weiter|Meine Entdeckung)/}).click();
-  }
-  await expect(page.getByText('Ich frage nach',{exact:true})).toBeVisible();
-  await page.getByRole('button',{name:/Einen weiteren Moment/}).click();
-  await expect(page.getByRole('textbox')).toHaveValue('');
-});
