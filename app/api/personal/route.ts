@@ -18,5 +18,5 @@ export async function POST(req:NextRequest){
  const limit=limits.get(key)||{count:0,until:now+60000};const total=limits.get('all')||{count:0,until:now+60000};
  if(limit.count>=6||total.count>=30)return json({error:'A little pause: try again in a minute, or keep going without Claude.'},429);
  limit.count++;total.count++;limits.set(key,limit);limits.set('all',total);
- try{return json({mode:'live',...await personalReflection(input)});}catch{return json({error:'Claude could not finish this reflection. Your words are still here. You can try again or continue without AI.'},502);}
+ try{return json({mode:'live',...await personalReflection(input)});}catch(e){const err=e as {status?:number;name?:string;message?:string};const code=typeof err.message==='string'&&/^INVALID_(FIELDS|TOOL)_/.test(err.message)?err.message:err.status?'PROVIDER_'+err.status:err.name==='APIConnectionTimeoutError'?'PROVIDER_TIMEOUT':'PROVIDER_UNAVAILABLE';console.warn('personal-call-failed',{code});return json({error:'Claude could not finish this reflection. Your words are still here. You can try again or continue without AI.',code},502);}
 }

@@ -15,6 +15,8 @@ export async function personalReflection(input:z.infer<typeof personalInput>){
  messages:[{role:'user',content:JSON.stringify({phase:input.phase,moment:input.moment,thought:input.thought,alternative:input.alternative,sources:reflectionSources})}],
  tools:[{name:'return_reflection',description:'Return one bounded reflection, with a verified background source ID.',input_schema:{type:'object',properties:{question:{type:'string'},perspectives:{type:'array',items:{type:'string'},minItems:2,maxItems:2},insight:{type:'string'},practice:{type:'string'},sourceId:{type:'string',enum:reflectionSources.map(s=>s.id)}},required:['question','perspectives','insight','practice','sourceId'],additionalProperties:false}}],tool_choice:{type:'tool',name:'return_reflection',disable_parallel_tool_use:true}});
  const blocks=result.content.filter(b=>b.type==='tool_use'&&b.name==='return_reflection');
- if(blocks.length!==1||blocks[0].type!=='tool_use')throw Error('Invalid response');
+ if(blocks.length!==1||blocks[0].type!=='tool_use')throw Error('INVALID_TOOL_'+result.stop_reason);
+ const checked=output.safeParse(blocks[0].input);
+ if(!checked.success){const fields=[...new Set(checked.error.issues.map(i=>i.path.join('.')))];console.warn('personal-output-rejected',{fields,model:result.model,stopReason:result.stop_reason});throw Error('INVALID_FIELDS_'+fields.join('_'));}
  return {reflection:parsePersonalReflection(JSON.stringify(blocks[0].input)),provenance:{model:result.model,promptVersion:PERSONAL_PROMPT_VERSION,inputTokens:result.usage.input_tokens,outputTokens:result.usage.output_tokens,latencyMs:Date.now()-started}};
 }
