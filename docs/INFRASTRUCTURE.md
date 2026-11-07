@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | Local project | metapleasure-reflection-agent | Existing dedicated workspace; application name Noocene Lab |
 | GitHub | Herzilove/noocene-lab | Public; https://github.com/Herzilove/noocene-lab |
-| Vercel | noocene-lab | Not provisioned |
+| Vercel | noocene-lab | Production: https://noocene-lab.vercel.app |
 | Supabase | noocene-lab-mvp | Not provisioned |
 
 The first local prototype uses process memory with expiration. It is not suitable for distributed production research collection. Supabase persistence and policies must be implemented and tested before collecting durable study data. No existing project credentials or databases are reused.

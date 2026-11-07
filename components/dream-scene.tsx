@@ -1,0 +1,12 @@
+import { useId } from 'react';
+export function DreamScene({variant='social',active=false}:{variant?:string;active?:boolean}){
+ const id=useId().replace(/:/g,'');
+ const color=variant==='work'?'#c2fb8b':variant==='self'?'#ffb39a':'#b9a2ff';
+ return <svg viewBox="0 0 420 290" className={`dream-scene ${active?'scene-active':''}`} aria-hidden="true">
+ <defs><linearGradient id={`rock${id}`} x2="0" y2="1"><stop stopColor={color}/><stop offset="1" stopColor="#4f3c85"/></linearGradient><radialGradient id={`orb${id}`} cx=".32" cy=".25"><stop stopColor="#fff"/><stop offset=".3" stopColor={color}/><stop offset="1" stopColor="#51407e"/></radialGradient></defs>
+ <g className="scene-clouds" fill="none" stroke={color} opacity=".28"><ellipse cx="210" cy="165" rx="176" ry="65" strokeDasharray="3 8"/><ellipse cx="210" cy="165" rx="150" ry="40"/></g>
+ <g className="scene-island"><ellipse cx="210" cy="260" rx="85" ry="9" fill="#100d24" opacity=".3"/><path d="M95 179 L210 229 L325 179 L284 231 L210 260 L139 229Z" fill={`url(#rock${id})`} opacity=".85"/><ellipse cx="210" cy="179" rx="115" ry="48" fill="#e9e0ff"/><ellipse cx="210" cy="174" rx="104" ry="39" fill={color}/><path d="M121 180Q210 215 300 178" fill="none" stroke="#fff" strokeWidth="2" opacity=".5"/>
+ <g className="scene-pal"><path d="M166 151 Q152 104 173 76 Q191 51 222 66 Q252 79 255 126 L255 155 Q211 185 166 151" fill={`url(#orb${id})`}/><ellipse cx="195" cy="115" rx="5" ry="8" fill="#211a3d"/><ellipse cx="226" cy="115" rx="5" ry="8" fill="#211a3d"/><path d="M204 134Q211 140 218 133" fill="none" stroke="#211a3d" strokeWidth="3" strokeLinecap="round"/><ellipse cx="183" cy="130" rx="7" ry="3" fill="#f3a6b2" opacity=".6"/></g>
+ {variant==='work'?<g transform="translate(264 106)"><path d="M0 30L18 0 36 30 18 47Z" fill="#f3ffd9"/><path d="M18 0V47M0 30H36" stroke="#99bd68"/></g>:variant==='self'?<g fill="#ffe9b4"><path d="M115 109Q86 57 113 38Q144 53 115 109"/><path d="M115 109Q142 71 156 87Q151 109 115 109"/><path d="M115 109V163" stroke="#58734f" strokeWidth="4"/></g>:<g transform="translate(269 85)"><rect width="60" height="37" rx="12" fill="#fff"/><path d="M10 34L7 46 27 35" fill="#fff"/><circle cx="16" cy="18" r="3" fill="#a58bdc"/><circle cx="30" cy="18" r="3" fill="#a58bdc"/><circle cx="44" cy="18" r="3" fill="#a58bdc"/></g>}
+ </g><g className="scene-sparks" fill={color}><path d="M72 70l4 10 10 4-10 4-4 10-4-10-10-4 10-4Z"/><path d="M332 151l3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/><circle cx="301" cy="40" r="4"/><circle cx="114" cy="229" r="3"/></g></svg>;
+}

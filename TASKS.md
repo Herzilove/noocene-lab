@@ -8,6 +8,7 @@
 - [ ] Durable Supabase study storage, RLS and importer.
 - [ ] Reviewed task bank, participant-level allocation and volunteer pilot.
 - [x] Publish dedicated public repository: https://github.com/Herzilove/noocene-lab.
-- [ ] Deploy dedicated Vercel project.
+- [x] Deploy dedicated Vercel project at https://noocene-lab.vercel.app.
+- [x] Add visual worlds, a short personal reflection journey and an optional device-local discovery garden.
 
 See docs/ACCEPTANCE.md for detailed gaps and JOURNAL.md for verified checks.

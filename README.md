@@ -28,7 +28,7 @@ Open http://127.0.0.1:3000 during development or http://127.0.0.1:3100 for the p
 - One original, logically checked multiple-choice problem; initial/revised answers, confidence, randomized independent/guided conditions and deterministic grading.
 - Separate optional consent for research storage and sending reasoning-task data to Claude.
 - Server-controlled transitions, expiring anonymous sessions, origin checks, validated inputs and authenticated aggregate-data access.
-- Scripted three-phase INNERSPACE; personal narratives remain in browser memory.
+- Interactive INNERSPACE worlds with five short reflection steps, a visual reality check, optional custom words and a discovery garden. Unsaved entries remain in tab memory; saving a card and revisiting an outcome requires an explicit local-device choice.
 - Repeatable synthetic analysis with tests, metrics, SVG, manifest, hashes, validation and a next-experiment proposal.
 
 The single question is not a psychometrically validated task bank. Repeated attempts are not independent participants. The web flow is a feasibility prototype, not a completed efficacy experiment.
@@ -55,7 +55,7 @@ Web feasibility exports and the synthetic experiment use different schemas. A re
 
 Research data currently lives only in bounded server process memory with a 30-minute expiry. Restarting the process, exiting or replacing a session can remove its record. This is unsuitable for durable or distributed study collection. INNERSPACE narratives are not sent to Claude or stored by the server.
 
-Supabase persistence, policies and migrations remain open. Dedicated intended cloud resources are listed in `docs/INFRASTRUCTURE.md`; no existing app database or deployment is reused. No cloud resources have been provisioned.
+Supabase persistence, policies and migrations remain open. Dedicated intended cloud resources are listed in `docs/INFRASTRUCTURE.md`; no existing app database or deployment is reused. The dedicated Vercel project is live at https://noocene-lab.vercel.app. Supabase is not provisioned.
 
 ## License and source material
 

@@ -8,7 +8,7 @@ This is a first working local prototype, not a claim of complete compliance with
 - Initial and revised answers and confidence, condition assignment, objective scoring.
 - Independent reflection and explicitly labelled scripted guided mode.
 - Optional live Claude integration with constrained safe-prompt selection, separate consent and error handling.
-- INNERSPACE replay, hypothetical perspective and future response with local-memory narrative handling.
+- Interactive INNERSPACE worlds, observation/interpretation check, perspective choices and mini-missions. Explicit local-device discovery storage with revisit and deletion.
 - Origin checks, input validation, expiring random sessions, protected JSON export and withdrawal.
 - Reproducible synthetic pipeline, claim provenance, immutable run directories, tests, hashes, metrics, SVG and report.
 - Public GitHub repository, open-source license files, setup instructions, event submission draft (Osk: Engineer; Maik: Scientist).
@@ -27,10 +27,10 @@ Unit/route tests cover state, grading, confidence analysis, consent, export auth
 - Supabase schema/migrations, RLS and integration tests; production-ready rate limits.
 - Importer mapping web feasibility exports to the prespecified experimental analysis schema.
 - Protected aggregate metric charts and completion-rate accounting; current admin provides JSON export only.
-- Optional saved personal discoveries and deletion across durable providers.
+- Cross-device personal discovery storage and provider deletion. Local-device opt-in saving, revisiting and deletion are implemented.
 - Autonomous, verified literature acquisition and broader knowledge retrieval. Current sources are curated.
 - Live model interpretation for INNERSPACE; current guided experience is scripted.
 - Genuine human-study findings. Synthetic pipeline checks establish no intervention efficacy.
-- Vercel deployment; the public repository is https://github.com/Herzilove/noocene-lab.
+- Broader production observability and durable research collection; Vercel is live at https://noocene-lab.vercel.app.
 
 No psychological, therapeutic or consciousness measurement claim follows from passing software tests.
