@@ -34,6 +34,10 @@ Four fictional records validate execution. Independent accuracy is 50% before an
 ## Where it got stuck
 No approved human study or real study dataset exists. Live-model behavior and leakage resistance require configured access and actual tests. Task validity, final protocol and matched reflection opportunities remain open. The runner is an offline reproducible process, not autonomous human experimentation.
 
+## How Claude was used
+
+The optional SDK integration is implemented for prompt selection in the objective quest. No credentialed provider call has yet been verified. The personal three-step experience and current synthetic runner do not call Claude. See docs/CLAUDE-INTEGRATION.md for the remaining model-driven loop work.
+
 ## What it would need next
 Freeze and approve the pilot; review task keys and data collection; verify live intervention; recruit 5–10 consenting volunteers; preserve negative and inconclusive findings.
 
@@ -48,7 +52,7 @@ Node.js 24+. No credentials for synthetic reproduction. Consult final README for
 `research/sample.json` is fictional. No personal stories or real participant records are included. Source provenance is in `docs/SOURCES.md` and `research/literature.json`.
 
 ## Demo materials
-Pending final application link. Show the question, complete Mind Quest, reproducible synthetic analysis and limitations.
+https://noocene-lab.vercel.app — personal reflection; https://noocene-lab.vercel.app/research — research explanation. Show the question, complete Mind Quest, reproducible synthetic analysis and limitations.
 
 ## Confirmations
 - [x] Repository is public and has complete license files.

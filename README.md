@@ -28,7 +28,7 @@ Open http://127.0.0.1:3000 during development or http://127.0.0.1:3100 for the p
 - One original, logically checked multiple-choice problem; initial/revised answers, confidence, randomized independent/guided conditions and deterministic grading.
 - Separate optional consent for research storage and sending reasoning-task data to Claude.
 - Server-controlled transitions, expiring anonymous sessions, origin checks, validated inputs and authenticated aggregate-data access.
-- Interactive INNERSPACE worlds with five short reflection steps, a visual reality check, optional custom words and a discovery garden. Unsaved entries remain in tab memory; saving a card and revisiting an outcome requires an explicit local-device choice.
+- One INNERSPACE entry with three reflection steps, an optional reality check, rule-based grounded insights, source-linked exercises and a discovery garden. Unsaved entries remain in tab memory; saving a card and revisiting an outcome requires an explicit local-device choice.
 - Repeatable synthetic analysis with tests, metrics, SVG, manifest, hashes, validation and a next-experiment proposal.
 
 The single question is not a psychometrically validated task bank. Repeated attempts are not independent participants. The web flow is a feasibility prototype, not a completed efficacy experiment.

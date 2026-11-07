@@ -6,4 +6,6 @@ The current prototype uses Next.js and the official Anthropic SDK. Default guide
 
 Finish meaningful checks, then prioritize live-provider verification, isolated durable study storage and real experimental design. Do not make paid requests without an agreed budget. Publication is authorized after checking licenses, private content and tests. Use a separate noocene-lab GitHub/Vercel project and noocene-lab-mvp Supabase project; never reuse another product's resources. Team for submission: Osk (Engineer), Maik (Scientist).
 
-Current personal experience: world hub (Social Orbit, Work Mode, Inner Weather), visual five-step journey and explicit opt-in localStorage garden with review/delete. Unsaved personal entries stay in memory. No model calls in this experience. Keep observed learning distinct from self-reported discoveries.
+Current personal experience: one shared entry point, visual three-step journey (reported moment, thought, alternative view) and explicit opt-in localStorage garden with review/delete. Unsaved personal entries stay in memory. No model calls in this experience. Keep observed learning distinct from self-reported discoveries.
+
+See docs/CLAUDE-INTEGRATION.md for verified event requirements, actual SDK limits and planned personal/reflection/research integration.
