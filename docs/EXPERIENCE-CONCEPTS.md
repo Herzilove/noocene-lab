@@ -1,6 +1,6 @@
 # Playful reflection concepts
 
-Current release: text-first input, editable example choices, blank-input prevention and visual captured-thought feedback. The concepts below are proposals, not implemented features or evidence of improved metacognition.
+Current release includes a tappable companion with reviewed hints, text-first input, editable choices, a Reality Lens, tiny missions and an optional locally saved Time Capsule with a later outcome check-in. Garden states show actual saved/revisited entries. These are implemented interactions, not evidence of improved metacognition. Thought Catcher animation, Future Fork and Friend Mode remain proposals.
 
 | Concept | Interaction | Reflection purpose | First useful implementation |
 | --- | --- | --- | --- |

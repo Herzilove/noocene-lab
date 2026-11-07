@@ -19,3 +19,5 @@ See docs/ACCEPTANCE.md for detailed gaps and JOURNAL.md for verified checks.
 - [x] Verify current event template and document concrete model/research gaps in docs/CLAUDE-INTEGRATION.md.
 
 - [x] Translate every website surface, accessible label, API error and reviewed reflection prompt to English; version the English research task.
+
+- [x] Add tappable reflection companion, Reality Lens, tiny missions and optional local time capsules with revisit feedback.
